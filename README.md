@@ -4,7 +4,7 @@ Todo List 웹 애플리케이션입니다.
 
 ## Features
 
-- CRUD 기능
+- CRUD 기능 (Create, Read, Update, Delete)
 - create-react-app으로 간편한 번들링과 배포가 가능
 - styled components
 
