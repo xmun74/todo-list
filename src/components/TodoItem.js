@@ -21,13 +21,25 @@ const DeleteBtn = styled.button`
 const EditBtn = styled(DeleteBtn)``;
 const CheckBtn = styled(DeleteBtn)``;
 
-export default function TodoItem({ id, text, checked }) {
+export default function TodoItem({
+  id,
+  text,
+  checked,
+  todos,
+  setTodos,
+  // setChecked,
+}) {
+  const handleDelete = () => {
+    let deleted = todos.filter((el) => el.id !== id);
+    setTodos(deleted);
+  };
+
   return (
     <TodoItemBlock key={id}>
       {checked ? <CheckBtn>✅</CheckBtn> : <CheckBtn>❎</CheckBtn>}
       <Text>{text}</Text>
       <EditBtn>🖍</EditBtn>
-      <DeleteBtn>❌</DeleteBtn>
+      <DeleteBtn onClick={handleDelete}>❌</DeleteBtn>
     </TodoItemBlock>
   );
 }
