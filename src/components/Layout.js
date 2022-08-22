@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import styled from 'styled-components';
-import TodoList from './components/TodoList';
+import TodoList from './TodoList';
 
 const Container = styled.div`
   display: flex;
@@ -42,7 +42,6 @@ export default function Layout() {
     };
     setTodos([...todos, newTodo]);
     setText('');
-    console.log(todos);
   };
 
   return (
@@ -55,7 +54,8 @@ export default function Layout() {
           onChange={(e) => setText(e.target.value)}
         />
       </Form>
-      <TodoList todos={todos} setChecked={setChecked} />
+
+      <TodoList todos={todos} setChecked={setChecked} setTodos={setTodos} />
     </Container>
   );
 }
